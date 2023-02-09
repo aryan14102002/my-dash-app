@@ -15,4 +15,3 @@ tenacity==8.2.0
 Werkzeug==2.2.2
 zipp==3.12.1
 pandas==1.2.4
-numpy==1.20.1
