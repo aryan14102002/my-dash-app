@@ -159,13 +159,11 @@ del df03, df04, df05#, df06, df07, df08, df09, df10, df11, df12, df13, df14, df1
 
 def dataframe(isi):
     IN = df_all.loc[df_all['ISIN'].isin([isi])]
-    arr = ['']*240
+    arr = ['']*36
     month = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
     for j in range(0,3):
         for i in range(0,12):
-               arr[12*j+i]= month[i]+" "+str(2003+j)
-                
+            arr[12*j+i]= month[i]+" "+str(2003+j)
     m = []
     for i in range(0,36):
         Mon = IN.loc[IN['Trade Date'].isin([arr[i]])]
@@ -175,7 +173,6 @@ def dataframe(isi):
     ytm = pd.DataFrame(list(zip(arr, m)))
     ytm.set_axis(['Month', 'YTM'], axis='columns', inplace=True)
     return ytm
-
 
 # In[28]:
 
