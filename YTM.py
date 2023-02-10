@@ -35,109 +35,109 @@ df05 = pd.read_csv("2005.csv")
 # In[5]:
 
 
-df06 = pd.read_csv("2006.csv")
+# df06 = pd.read_csv("2006.csv")
 
 
-# In[6]:
+# # In[6]:
 
 
-df07 = pd.read_csv("2007.csv")
+# df07 = pd.read_csv("2007.csv")
 
 
-# In[7]:
+# # In[7]:
 
 
-df08 = pd.read_csv("2008.csv")
+# df08 = pd.read_csv("2008.csv")
 
 
-# In[8]:
+# # In[8]:
 
 
-df09 = pd.read_csv("2009.csv")
+# df09 = pd.read_csv("2009.csv")
 
 
-# In[9]:
+# # In[9]:
 
 
-df10 = pd.read_csv("2010.csv")
+# df10 = pd.read_csv("2010.csv")
 
 
-# In[10]:
+# # In[10]:
 
 
-df11 = pd.read_csv("2011.csv")
+# df11 = pd.read_csv("2011.csv")
 
 
-# In[11]:
+# # In[11]:
 
 
-df12 = pd.read_csv("2012.csv")
+# df12 = pd.read_csv("2012.csv")
 
 
-# In[12]:
+# # In[12]:
 
 
-df13 = df = pd.read_csv('2013.csv')
+# df13 = df = pd.read_csv('2013.csv')
 
 
-# In[13]:
+# # In[13]:
 
 
-df14 = pd.read_csv('2014.csv')
+# df14 = pd.read_csv('2014.csv')
 
 
-# In[14]:
+# # In[14]:
 
 
-df15 = pd.read_csv('2015.csv')
+# df15 = pd.read_csv('2015.csv')
 
 
-# In[15]:
+# # In[15]:
 
 
-df16 = pd.read_csv('2016.csv')
+# df16 = pd.read_csv('2016.csv')
 
 
-# In[16]:
+# # In[16]:
 
 
-df17 = pd.read_csv('2017.csv')
+# df17 = pd.read_csv('2017.csv')
 
 
-# In[17]:
+# # In[17]:
 
 
-df18 = pd.read_csv('2018.csv')
+# df18 = pd.read_csv('2018.csv')
 
 
-# In[18]:
+# # In[18]:
 
 
-df19 = pd.read_csv('2019.csv')
+# df19 = pd.read_csv('2019.csv')
 
 
 # In[19]:
 
 
-df20 = pd.read_csv('2020.csv')
+#df20 = pd.read_csv('2020.csv')
 
 
 # In[20]:
 
 
-df21 = pd.read_csv('2021.csv')
+#df21 = pd.read_csv('2021.csv')
 
 
 # In[21]:
 
 
-df22 = pd.read_csv('2022.csv')
+#df22 = pd.read_csv('2022.csv')
 
 
 # In[22]:
 
 
-df_all = pd.concat([df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22])
+df_all = pd.concat([df03, df04, df05])#, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22])
 
 
 # In[24]:
@@ -151,7 +151,7 @@ df_all = pd.concat([df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, 
 # In[26]:
 
 
-del df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22
+del df03, df04, df05#, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22
 
 
 # In[27]:
@@ -161,9 +161,11 @@ def dataframe(isi):
     IN = df_all.loc[df_all['ISIN'].isin([isi])]
     arr = ['']*240
     month = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
     for j in range(0,3):
         for i in range(0,12):
-            arr[12*j+i]= month[i]+" "+str(2003+j)
+               arr[12*j+i]= month[i]+" "+str(2003+j)
+                
     m = []
     for i in range(0,36):
         Mon = IN.loc[IN['Trade Date'].isin([arr[i]])]
