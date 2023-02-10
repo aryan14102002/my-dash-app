@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[30]:
+# In[1]:
 
 
 import pandas as pd
@@ -14,145 +14,151 @@ import plotly.graph_objects as go
 from plotly.offline import iplot
 
 
-# In[31]:
+# In[2]:
 
 
-# df03 = pd.read_csv("2003.csv")
+df03 = pd.read_csv("2003.csv")
 
 
-# In[32]:
+# In[3]:
 
 
-# df04 = pd.read_csv("2004.csv")
+df04 = pd.read_csv("2004.csv")
 
 
-# In[33]:
+# In[4]:
 
 
-# df05 = pd.read_csv("2005.csv")
+df05 = pd.read_csv("2005.csv")
 
 
-# In[34]:
+# In[5]:
 
 
-# df06 = pd.read_csv("2006.csv")
+df06 = pd.read_csv("2006.csv")
 
 
-# In[35]:
+# In[6]:
 
 
-# df07 = pd.read_csv("2007.csv")
+df07 = pd.read_csv("2007.csv")
 
 
-# In[36]:
+# In[7]:
 
 
-# df08 = pd.read_csv("2008.csv")
+df08 = pd.read_csv("2008.csv")
 
 
-# In[37]:
+# In[8]:
 
 
-# df09 = pd.read_csv("2009.csv")
+df09 = pd.read_csv("2009.csv")
 
 
-# In[38]:
+# In[9]:
 
 
-# df10 = pd.read_csv("2010.csv")
+df10 = pd.read_csv("2010.csv")
 
 
-# In[39]:
+# In[10]:
 
 
-# df11 = pd.read_csv("2011.csv")
+df11 = pd.read_csv("2011.csv")
 
 
-# In[40]:
+# In[11]:
 
 
-# df12 = pd.read_csv("2012.csv")
+df12 = pd.read_csv("2012.csv")
 
 
-# In[41]:
+# In[12]:
 
 
 df13 = df = pd.read_csv('2013.csv')
 
 
-# In[42]:
+# In[13]:
 
 
 df14 = pd.read_csv('2014.csv')
 
 
-# In[43]:
+# In[14]:
 
 
 df15 = pd.read_csv('2015.csv')
 
 
-# In[44]:
+# In[15]:
 
 
 df16 = pd.read_csv('2016.csv')
 
 
-# In[45]:
+# In[16]:
 
 
 df17 = pd.read_csv('2017.csv')
 
 
-# In[46]:
+# In[17]:
 
 
 df18 = pd.read_csv('2018.csv')
 
 
-# In[47]:
+# In[18]:
 
 
 df19 = pd.read_csv('2019.csv')
 
 
-# In[48]:
+# In[19]:
 
 
 df20 = pd.read_csv('2020.csv')
 
 
-# In[49]:
+# In[20]:
 
 
 df21 = pd.read_csv('2021.csv')
 
 
-# In[50]:
+# In[21]:
 
 
 df22 = pd.read_csv('2022.csv')
 
 
-# In[51]:
+# In[22]:
 
 
-df_all = pd.concat([df13, df14, df15, df16, df17, df18, df19, df20, df21, df22])
+df_all = pd.concat([df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22])
 
 
-# In[52]:
+# In[24]:
+
+
+df_all = df_all.drop(['Trade Time', 'Security Description', 'Face Value', 'Trade Price', 'Trade Indicator'], axis=1)
+
+
+# In[25]:
 
 
 df_all.memory_usage(deep=True).sum()
 
 
-# In[53]:
+# In[26]:
 
 
-del df13, df14, df15, df16, df17, df18, df19, df20, df21, df22
+del df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22
 
 
-# In[54]:
+# In[27]:
 
 
 def dataframe(isi):
@@ -173,7 +179,7 @@ def dataframe(isi):
     return ytm
 
 
-# In[55]:
+# In[28]:
 
 
 
@@ -300,7 +306,7 @@ app.layout = html.Div(id = 'parent', children = [
     
 
 
-# In[56]:
+# In[29]:
 
 
 @app.callback(Output(component_id='line_plot', component_property= 'figure'),
@@ -312,7 +318,7 @@ def plotone(dropdown_value):
     return fig
 
 
-# In[57]:
+# In[30]:
 
 
 if __name__ == '__main__':
