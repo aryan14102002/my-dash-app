@@ -143,13 +143,9 @@ df_all = pd.concat([df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, 
 # In[24]:
 
 
-df_all = df_all.drop(['Trade Time', 'Security Description', 'Face Value', 'Trade Price', 'Trade Indicator'], axis=1)
-
 
 # In[25]:
 
-
-df_all.memory_usage(deep=True).sum()
 
 
 # In[26]:
