@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 import pandas as pd
@@ -14,133 +14,145 @@ import plotly.graph_objects as go
 from plotly.offline import iplot
 
 
-# In[4]:
+# In[2]:
 
 
 df03 = pd.read_csv("2003.csv")
 
 
-# In[5]:
+# In[3]:
 
 
 df04 = pd.read_csv("2004.csv")
 
 
-# In[6]:
+# In[4]:
 
 
 df05 = pd.read_csv("2005.csv")
 
 
-# In[7]:
+# In[5]:
 
 
 df06 = pd.read_csv("2006.csv")
 
 
-# In[8]:
+# In[6]:
 
 
 df07 = pd.read_csv("2007.csv")
 
 
-# In[9]:
+# In[7]:
 
 
 df08 = pd.read_csv("2008.csv")
 
 
-# In[10]:
+# In[8]:
 
 
 df09 = pd.read_csv("2009.csv")
 
 
-# In[11]:
+# In[9]:
 
 
 df10 = pd.read_csv("2010.csv")
 
 
-# In[12]:
+# In[10]:
 
 
 df11 = pd.read_csv("2011.csv")
 
 
-# In[13]:
+# In[11]:
 
 
 df12 = pd.read_csv("2012.csv")
 
 
-# In[28]:
+# In[12]:
 
 
 df13 = df = pd.read_csv('2013.csv')
 
 
-# In[29]:
+# In[13]:
 
 
 df14 = pd.read_csv('2014.csv')
 
 
-# In[30]:
+# In[14]:
 
 
 df15 = pd.read_csv('2015.csv')
 
 
-# In[31]:
+# In[15]:
 
 
 df16 = pd.read_csv('2016.csv')
 
 
-# In[32]:
+# In[16]:
 
 
 df17 = pd.read_csv('2017.csv')
 
 
-# In[33]:
+# In[17]:
 
 
 df18 = pd.read_csv('2018.csv')
 
 
-# In[34]:
+# In[18]:
 
 
 df19 = pd.read_csv('2019.csv')
 
 
-# In[35]:
+# In[19]:
 
 
 df20 = pd.read_csv('2020.csv')
 
 
-# In[36]:
+# In[20]:
 
 
 df21 = pd.read_csv('2021.csv')
 
 
-# In[37]:
+# In[21]:
 
 
 df22 = pd.read_csv('2022.csv')
 
 
-# In[38]:
+# In[22]:
 
 
 df_all = pd.concat([df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22])
 
 
-# In[39]:
+# In[23]:
+
+
+df_all.memory_usage(deep=True).sum()
+
+
+# In[24]:
+
+
+del df03, df04, df05, df06, df07, df08, df09, df10, df11, df12, df13, df14, df15, df16, df17, df18, df19, df20, df21, df22
+
+
+# In[25]:
 
 
 def dataframe(isi):
@@ -161,7 +173,7 @@ def dataframe(isi):
     return ytm
 
 
-# In[40]:
+# In[26]:
 
 
 
@@ -288,7 +300,7 @@ app.layout = html.Div(id = 'parent', children = [
     
 
 
-# In[41]:
+# In[27]:
 
 
 @app.callback(Output(component_id='line_plot', component_property= 'figure'),
@@ -300,7 +312,7 @@ def plotone(dropdown_value):
     return fig
 
 
-# In[42]:
+# In[28]:
 
 
 if __name__ == '__main__':
