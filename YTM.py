@@ -161,11 +161,11 @@ def dataframe(isi):
     IN = df_all.loc[df_all['ISIN'].isin([isi])]
     arr = ['']*240
     month = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    for j in range(0,20):
+    for j in range(0,3):
         for i in range(0,12):
             arr[12*j+i]= month[i]+" "+str(2003+j)
     m = []
-    for i in range(0,240):
+    for i in range(0,36):
         Mon = IN.loc[IN['Trade Date'].isin([arr[i]])]
         ax =  Mon.describe()
         a = ax['YTM / Yield'][1]
